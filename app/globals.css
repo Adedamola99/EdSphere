@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+body {
+    -ms-overflow-style: none;
+    font-size: 16px;
+    scrollbar-width: none;
+    background-color: #f7f8fa;
+}
+
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+}
+
+.side-bar {
+    background-color: #351c56;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 20%;
+    min-width: fit-content;
+}
+
+.site-logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin: 2.5em 1em 0 1em;
+}
+
+#search {
+    background-color: #4b2c73;
+    padding: .5em;
+    outline: none;
+    border-radius: 4px;
+    border: none;
+    font-size: 1.1rem;
+    margin: 0 1em;
+}
+
+.line {
+    border-color: #65527d;
+}
+
+nav {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-self: start;
+}
+
+.site-link {
+    text-decoration: unset;
+    color: #AAA1C2;
+    font-size: bolder;
+    cursor: pointer;
+    padding: 0.5em 4em 0.5em 1em;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.active {
+    color: #fff;
+    background-color: #4b2c73;
+}
+
+.primary-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.inner-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.taskbar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 1em;
+}
+
+.calendar {
+    background-color: #65527d;
+}
+
+.chart {
+    grid-column: 2 / 4;
+    background-color: #4b2c73;
+}
+
+.goals {
+    grid-row: 2 / 4;
+    background-color: antiquewhite;
+}
+
+.team {
+    background-color: #e5f0fe;
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+}
+
+.progress {
+    background-color: darkcyan;
+}
+
+.achievement {
+    background-color: gold;
+}
+
+.team_images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.object-contain {
+    border-radius: 50%;
+    border: 3px solid #351c56;
+}
+
+.header-link {
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.progress h3 {
+    color: white;
+}
+
+.inner-progress-box {
+    margin-top: 15px;
+}
+
+.progress-status {
+    width: 100%;
+    background-color: #f4f4f4;
+    border-radius: 1em;
+    margin: .5em 0;
+}
+
+.progress-bar {
+    width: 75%;
+    height: 15px;
+    background-color: #3CB4AB;
+    border-radius: 10px;
+}
+
+.xp-box {
+    margin-top: 15px;
+}
+
+.goal-box {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
