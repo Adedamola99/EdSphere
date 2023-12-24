@@ -6,9 +6,9 @@ const DashBoardLayout = ({ children }) => {
             <h1>DashBoard</h1>
                 <div className="dashboard-container">
                     <aside className="sidebar">
-                        <Link href="/dashboard/account" className="dashboard-link">Account</Link>
-                        <Link href="/dashboard/analytics" className="dashboard-link">Analytics</Link>
-                        <Link href="/dashboard/settings" className="dashboard-link">Settings</Link>
+                        <Link href="/dashboard/profile" className="dashboard-link">Profile</Link>
+                        <Link href="/dashboard/grade" className="dashboard-link">Grade</Link>
+                        <Link href="/dashboard/transaction" className="dashboard-link">Transaction</Link>
                     </aside>
 
                     <div className="info-container">

@@ -33,6 +33,10 @@ body {
     gap: 20px;
     width: 20%;
     min-width: fit-content;
+
+    position: sticky;
+    height: 100vh;
+    top: 0px;
 }
 
 .site-logo {
@@ -106,7 +110,7 @@ nav {
     background-color: #65527d;
 }
 
-.chart {
+.about{
     grid-column: 2 / 4;
     background-color: #4b2c73;
 }
@@ -170,13 +174,45 @@ nav {
     border-radius: 10px;
 }
 
-.xp-box {
-    margin-top: 15px;
-}
-
 .goal-box {
     margin-top: 15px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+@media (max-width: 850px) {
+    .side-bar {
+        grid-template-columns: 1fr;
+        width: 40%;
+    }
+
+    .calendar {
+        grid-column: 1 / 4;
+    }
+
+    .about {
+        grid-column: 1 / 4;
+        background-color: #4b2c73;
+    }
+    
+    .goals {
+        grid-row: 3 / 4;
+        grid-column: 1 /4;
+        background-color: antiquewhite;
+    }
+    
+    .team {
+        background-color: #e5f0fe;
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+    }
+
+    .progress {
+        grid-column: 1 / 4;
+    }
+
+    .achievement {
+        grid-column: 1 / 4;
+    }
 }

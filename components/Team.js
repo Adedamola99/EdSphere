@@ -5,7 +5,7 @@ import React from 'react'
 const Team = () => {
   return (
     <div className="team container">
-      <Link className="header-link" href="/">Team member &gt;</Link> 
+      <Link className="header-link" href="/">Class member &gt;</Link> 
 
       <div className="team_images">
         <Image 

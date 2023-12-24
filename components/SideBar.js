@@ -18,9 +18,9 @@ const SideBar = () => {
             <nav>
                 <Link href="/" className={`site-link ${isActive === '/' ? 'active' : ''}`}>Home</Link>
                 <Link href="/dashboard" className={`site-link ${isActive ==="/dashboard" ? 'active' : ''}`}>DashBoard</Link>
-                <Link href="#" className={`site-link ${isActive === '/overview' ? 'active' : ''}`}>Overview</Link>
-                <Link href="#" className={`site-link ${isActive === '/leaderboard' ? 'active' : ''}`}>LeaderBoard</Link>
-                <Link href="/sign" className={`site-link ${isActive === '/signup' ? 'active' : ''}`}>Signup/ Login</Link>
+                <Link href="#" className={`site-link ${isActive === '/overview' ? 'active' : ''}`}>Notification</Link>
+                <Link href="#" className={`site-link ${isActive === '/leaderboard' ? 'active' : ''}`}>Staff</Link>
+                <Link href="/sign" className={`site-link ${isActive === '/signup' ? 'active' : ''}`}>Signup / Login</Link>
             </nav>
 
 
