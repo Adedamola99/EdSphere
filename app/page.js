@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styles from './page.module.css';
 import Project from '@/components/Project';
 import Goals from '@/components/Goals';
-import About from '@/components/about';
+import About from '@/components/About';
 import Team from '@/components/Team';
 import Progress from '@/components/Progress';
 import Achievement from '@/components/Achievement';

@@ -1,9 +1,9 @@
-const Analytics = () => {
+const Grade = () => {
     return ( 
-        <div>
-            <h5>Analytics</h5>
+        <div className="sub-container">
+            <h1>This is the user grade</h1>
         </div>
      );
 }
  
-export default Analytics;
+export default Grade;

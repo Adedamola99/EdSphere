@@ -1,9 +1,9 @@
-const Settings = () => {
+const Transactions = () => {
     return ( 
-        <div>
-            <h5>Setings</h5>
+        <div className="sub-container">
+            <h5>Transactions</h5>
         </div>
      );
 }
  
-export default Settings;
+export default Transactions;
