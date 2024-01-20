@@ -26,7 +26,7 @@ Facilitate communication and collaboration between students, teachers, and admin
 
 Follow the simple installation steps outlined below to get started.
 
----------
+---------------
 
 ## Installation
 
