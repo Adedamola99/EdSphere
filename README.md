@@ -14,7 +14,7 @@ Enjoy a seamless and intuitive interface for effortless navigation
 
 Efficiently handle a range of school activities, from assignments to events, all in one place.
 
-### 3. Dynamic Dashboard
+### 3. Dynamic Dashboard🏄
 
 Get personalized insights and updates on your dashboard based on your role within the education system.
 
