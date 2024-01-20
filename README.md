@@ -8,7 +8,7 @@ EdSphere is a powerful education application built with Next.js, designed to str
 
 ### 1. User-friendly Interface
 
-Enjoy a seamless and intuitive interface for effortless navigation.
+Enjoy a seamless and intuitive interface for effortless navigation
 
 ### 2. School Activity Management
 
