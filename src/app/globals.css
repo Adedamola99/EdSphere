@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('https://fonts.cdnfonts.com/css/satoshi') format('woff2'), 
+         url('https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular') format('woff');   
+}
+
+@font-face {
+    font-family: "Aeonik Regular";
+    src: url("https://db.onlinewebfonts.com/t/8f2a9d487bbbc60974cd132fc3a63862.eot");
+    src: url("https://db.onlinewebfonts.com/t/8f2a9d487bbbc60974cd132fc3a63862.eot?#iefix")format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/8f2a9d487bbbc60974cd132fc3a63862.woff2")format("woff2"),
+         url("https://db.onlinewebfonts.com/t/8f2a9d487bbbc60974cd132fc3a63862.woff")format("woff"),
+         url("https://db.onlinewebfonts.com/t/8f2a9d487bbbc60974cd132fc3a63862.ttf")format("truetype"),
+         url("https://db.onlinewebfonts.com/t/8f2a9d487bbbc60974cd132fc3a63862.svg#Aeonik Regular")format("svg");
+}
+  
