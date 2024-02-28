@@ -17,4 +17,143 @@
          url("https://db.onlinewebfonts.com/t/8f2a9d487bbbc60974cd132fc3a63862.ttf")format("truetype"),
          url("https://db.onlinewebfonts.com/t/8f2a9d487bbbc60974cd132fc3a63862.svg#Aeonik Regular")format("svg");
 }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+body {
+    -ms-overflow-style: none;
+    font-size: 16px;
+    scrollbar-width: none;
+    background-color: #f7f8fa;
+}
+
+
+.active {
+    color: #fff;
+    background-color: #4b2c73;
+}
+/* 
+.container {
+    border-radius: 5px;
+    padding: 1em;
+}
+
+.calendar {
+    background-color: #65527d;
+}
+
+.about{
+    grid-column: 2 / 4;
+    background-color: #4b2c73;
+}
+
+.goals {
+    grid-row: 2 / 4;
+    background-color: antiquewhite;
+}
+
+.team {
+    background-color: #e5f0fe;
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+}
+
+.progress {
+    background-color: darkcyan;
+}
+
+.achievement {
+    background-color: gold;
+}
+
+.team_images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.object-contain {
+    border-radius: 50%;
+    border: 3px solid #351c56;
+}
+
+.header-link {
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.progress h3 {
+    color: white;
+}
+
+.inner-progress-box {
+    margin-top: 15px;
+}
+
+.progress-status {
+    width: 100%;
+    background-color: #f4f4f4;
+    border-radius: 1em;
+    margin: .5em 0;
+}
+
+.progress-bar {
+    width: 75%;
+    height: 15px;
+    background-color: #3CB4AB;
+    border-radius: 10px;
+}
+
+.goal-box {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (max-width: 850px) {
+    .calendar {
+        grid-column: 1 / 4;
+    }
+
+    .about {
+        grid-column: 1 / 4;
+        background-color: #4b2c73;
+    }
+    
+    .goals {
+        grid-row: 3 / 4;
+        grid-column: 1 /4;
+        background-color: antiquewhite;
+    }
+    
+    .team {
+        background-color: #e5f0fe;
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+    }
+
+    .progress {
+        grid-column: 1 / 4;
+    }
+
+    .achievement {
+        grid-column: 1 / 4;
+    }
+} */
   

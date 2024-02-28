@@ -8,7 +8,7 @@ const Header = () => {
     <header className="bg-gradient-to-r from-blue-600 to-blue-400 py-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="text-white text-2xl font-bold">
-          Edsphere
+          <img src="./icons/logo.svg" alt="logo" width={60} />
         </Link>
 
         <Link href="/login" className="text-white">

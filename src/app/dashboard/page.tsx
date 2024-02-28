@@ -1,68 +1,184 @@
-import React from "react";
-import Link from "next/link";
+// pages/dashboard/index.js
+'use client'
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight, faPhone, faEnvelope, faUser, faStar, faUserShield } from '@fortawesome/free-solid-svg-icons';
 
-interface User {
-  username: string;
-  completedCourses: string[];
-  recommendedCourses: string[];
-  progress: number;
-}
-
-const DashboardPage: React.FC = () => {
-  const user: User = {
-    username: "damia",
-    completedCourses: ["Course 1", "Course 2", "Course 3"],
-    recommendedCourses: ["Recommended Course 1", "Recommended Course 2", "Recommended Course 3"],
-    progress: 75,
+const Dashboard = () => {
+  const userInfo = {
+    name: 'John Doe',
+    timezone: 'GMT+1',
+    phone: '+1234567890',
+    email: 'john.doe@example.com',
+    rank: 'Gold',
+    subscriptionPlan: 'Premium',
   };
 
+  // Mock data for learning progress
+  const [learningProgress, setLearningProgress] = useState([
+    { name: 'Week 1', progress: 10 },
+    { name: 'Week 2', progress: 45 },
+    { name: 'Week 3', progress: 21 },
+    { name: 'Week 4', progress: 80 },
+    { name: 'Week 5', progress: 43 },
+  ]);
+
+  // Mock data for registered courses
+  const [registeredCourses, setRegisteredCourses] = useState([
+    { id: 1, title: 'Introduction to Web Development' },
+    { id: 2, title: 'Data Science Fundamentals' },
+    { id: 3, title: 'Machine Learning Basics' },
+  ]);
+
+  // Mock data for achievements
+  const [achievements, setAchievements] = useState([
+    { id: 1, title: 'Completed Introduction to Web Development' },
+    { id: 2, title: 'Achieved Data Science Fundamentals Certificate' },
+    { id: 3, title: 'Completed Machine Learning Basics' },
+  ]);
+
+  // Mock data for teammates
+  const [teammates, setTeammates] = useState([
+    { id: 1, name: 'Alice Smith', role: 'Developer', img: '/images/Capture 2.PNG' },
+    { id: 2, name: 'Bob Johnson', role: 'Designer', img: '/images/Capture 4.PNG' },
+    { id: 3, name: 'Charlie Brown', role: 'Project Manager', img: '/images/Capture 5.PNG' },
+    { id: 4, name: 'Diana Clark', role: 'Engineer', img: '/images/Capture 6.PNG' },
+    { id: 5, name: 'Ella Garcia', role: 'Data Analyst', img: '/images/Capture 7.PNG' },
+    { id: 6, name: 'Franklin Lee', role: 'Marketing Manager', img: '/images/Capture 8.PNG' },
+    // Add more teammates as needed
+  ]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const teammatesPerPage = 2;
+
+  const indexOfLastTeammate = currentPage * teammatesPerPage;
+  const indexOfFirstTeammate = indexOfLastTeammate - teammatesPerPage;
+  const currentTeammates = teammates.slice(indexOfFirstTeammate, indexOfLastTeammate);
+
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
+
+  useEffect(() => {
+    // Fetch additional data or perform any side effects here
+  }, []);
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Welcome back, {user.username}!</h1>
-
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">Your Learning Progress</h2>
-        <p className="text-gray-600">You've completed {user.progress}% of your learning journey.</p>
-        <div className="bg-gray-200 h-6 w-full mt-2 rounded-full overflow-hidden">
-          <div className="bg-blue-500 h-full" style={{ width: `${user.progress}%` }}></div>
+    <div className="container mx-auto px-4 py-1">
+      <Head>
+        <title>Dashboard</title>
+      </Head>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
+        <div className="lg:col-span-2">
+          <div className="flex items-center justify-between mb-8 gap-2">
+            {/* Profile Box */}
+            <div className="bg-white py-2 px-8 rounded-lg shadow-lg flex flex-col items-start space-y-4 flex-grow">
+              {/* Name and Timezone */}
+              <div className='flex gap-4 align-middle'>
+              <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                <Image src="/images/Capture 1.PNG" alt="Profile Image" layout="fill" className="object-cover" />
+              </div>
+              <div>
+                <h2 className="text-xl font-bold">{userInfo.name}</h2>
+                <p className="text-gray-600">Timezone: {userInfo.timezone}</p>
+              </div>
+              </div>
+              {/* Additional Information */}
+              <div className="flex flex-col space-y-2">
+                {/* Phone */}
+                <div className="flex items-center">
+                  <FontAwesomeIcon icon={faPhone} className="text-gray-500" />
+                  <span className="ml-2">{userInfo.phone}</span>
+                </div>
+                {/* Email */}
+                <div className="flex items-center">
+                  <FontAwesomeIcon icon={faEnvelope} className="text-gray-500" />
+                  <span className="ml-2">{userInfo.email}</span>
+                </div>
+                {/* Rank */}
+                <div className="flex items-center">
+                  <FontAwesomeIcon icon={faStar} className="text-yellow-500" />
+                  <span className="ml-2">{userInfo.rank}</span>
+                </div>
+                {/* Subscription Plan */}
+                <div className="flex items-center">
+                  <FontAwesomeIcon icon={faUserShield} className="text-green-500" />
+                  <span className="ml-2">{userInfo.subscriptionPlan}</span>
+                </div>
+              </div>
+            </div>
+            {/* End of Profile Box */}
+            
+            
+            <div className="bg-white py-2 px-8 rounded-lg shadow-lg flex-grow">
+              <h3 className="text-lg font-semibold">Discussion Group Mates</h3>
+              <ul className="grid grid-cols-1 gap-2">
+                {currentTeammates.map(teammate => (
+                  <li key={teammate.id} className="flex items-center space-x-2">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                      <Image src={teammate.img} alt="group-image" layout="fill" className="object-cover"  />
+                    </div>
+                    
+                    <div>
+                      <p className="font-medium">{teammate.name}</p>
+                      <p className="text-sm text-gray-500">{teammate.role}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 flex justify-center">
+                <button
+                  onClick={() => paginate(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="mr-2 bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md"
+                >
+                  <FontAwesomeIcon icon={faChevronLeft} />
+                </button>
+                <button
+                  onClick={() => paginate(currentPage + 1)}
+                  disabled={indexOfLastTeammate >= teammates.length}
+                  className="bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md"
+                >
+                  <FontAwesomeIcon icon={faChevronRight} />
+                </button>
+            </div>
+            </div>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-lg font-semibold mb-4">Learning Progress</h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <AreaChart data={learningProgress}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Area type="monotone" dataKey="progress" fill="#8884d8" />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
         </div>
-      </div>
-
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">Completed Courses</h2>
-        {user.completedCourses.length > 0 ? (
-          <ul>
-            {user.completedCourses.map((course, index) => (
-              <li key={index}>{course}</li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-gray-600">You haven't completed any courses yet.</p>
-        )}
-      </div>
-
-      {/* Recommended Courses */}
-      <div>
-        <h2 className="text-xl font-semibold mb-2">Recommended Courses</h2>
-        {user.recommendedCourses.length > 0 ? (
-          <ul>
-            {user.recommendedCourses.map((course, index) => (
-              <li key={index}>{course}</li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-gray-600">No recommended courses at the moment. Check back later!</p>
-        )}
-      </div>
-
-      {/* Optional: Add links to navigate to other sections of the app */}
-      <div className="mt-8">
-        <Link href="/courses" className="text-blue-500 hover:underline">
-          Browse All Courses
-        </Link>
+        <div className="lg:col-span-1">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-lg font-semibold mb-4">Registered Courses</h3>
+            <ul className="divide-y divide-gray-200">
+              {registeredCourses.map(course => (
+                <li key={course.id} className="py-2">{course.title}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="mt-8 bg-white p-6 rounded-lg shadow-lg">
+            <h3 className="text-lg font-semibold mb-4">Achievements</h3>
+            <ul className="divide-y divide-gray-200">
+              {achievements.map(achievement => (
+                <li key={achievement.id} className="py-2">{achievement.title}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
-};
+}
 
-export default DashboardPage;
+export default Dashboard;
