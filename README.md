@@ -4,7 +4,7 @@ EdSphere is a powerful education application built with Next.js, designed to str
 
 -----
 
-### Features
+### Feature
 
 ### 1. User-friendly Interface🙂
 
