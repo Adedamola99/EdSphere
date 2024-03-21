@@ -34,7 +34,7 @@ Follow the simple installation steps outlined below to get started.
 2. Install dependencies: `npm install`
 3. Run the application: `npm run dev`
 
------------------------------------------
+----------------
 
 ## Usage
 
