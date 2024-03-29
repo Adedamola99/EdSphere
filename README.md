@@ -43,7 +43,7 @@ Follow the simple installation steps outlined below to get started.
 3. **Activities**: Manage various school activities through the dedicated sections.
 4. **Collaboration**: Engage with peers and educators through integrated collaboration tools.
 
----------------------------------------------
+--------------
 
 ## Future Development
 
