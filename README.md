@@ -29,7 +29,7 @@ Follow the simple installation steps outlined below to get started.
 
 ## Installation
 
-1. Clone the repository: `git clone [repository-url]`
+1. Clone the repository: `git clone https://github.com/Adedamola99/EdSphere`
 2. Install dependencies: `npm install`
 3. Run the application: `npm run dev`
 
