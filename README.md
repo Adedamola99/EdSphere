@@ -17,7 +17,7 @@ Efficiently handle a range of school activities, from assignments to events, all
 
 Get personalized insights and updates on your dashboard based on your role within the education system.
 
-### 4. Collaboration Tools👨‍🔧👩‍🔧⚒️
+### 4. Collaboration Tools
 
 Facilitate communication and collaboration between students, teachers, and administrators.
 
