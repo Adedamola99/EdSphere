@@ -52,4 +52,4 @@ Feel free to provide your feedback or contribute to the development of EdSphere.
 
 -----------
 
-## readMe under construction 🏗️🚧👷......
+## readMe under construction 🏗️🚧👷.
