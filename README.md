@@ -1,24 +1,23 @@
-### **EdSphere🎒**
+### **EdSphere📚**
 
-EdSphere is a powerful education application built with Next.js, designed to streamline various school activities and enhance the learning experience. Whether you're a student, teacher, or administrator, this application caters to your educational needs.
+EdSphere is a powerful AI education application built with Next.js, designed to streamline various school activities and enhance the learning experience. Whether you're a student, teacher, or administrator, this application caters to your educational needs.
 
 -----
-
 ### Features
 
-### 1. User-friendly Interface🙂
+### 1. User-friendly Interface
 
 Enjoy a seamless and intuitive interface for effortless navigation
 
-### 2. School Activity Management🏫
+### 2. School Activity Management
 
 Efficiently handle a range of school activities, from assignments to events, all in one place.
 
-### 3. Dynamic Dashboard🏄
+### 3. Dynamic Dashboard
 
 Get personalized insights and updates on your dashboard based on your role within the education system.
 
-### 4. Collaboration Tools👨‍🔧👩‍🔧⚒️
+### 4. Collaboration Tools
 
 Facilitate communication and collaboration between students, teachers, and administrators.
 
@@ -30,11 +29,11 @@ Follow the simple installation steps outlined below to get started.
 
 ## Installation
 
-1. Clone the repository: `git clone [repository-url]`
+1. Clone the repository: `git clone https://github.com/Adedamola99/EdSphere`
 2. Install dependencies: `npm install`
 3. Run the application: `npm run dev`
 
------------------------------------------
+----------------
 
 ## Usage
 
@@ -43,7 +42,7 @@ Follow the simple installation steps outlined below to get started.
 3. **Activities**: Manage various school activities through the dedicated sections.
 4. **Collaboration**: Engage with peers and educators through integrated collaboration tools.
 
----------------------------------------------
+--------------
 
 ## Future Development
 
@@ -53,5 +52,4 @@ Feel free to provide your feedback or contribute to the development of EdSphere.
 
 -----------
 
-## readMe still under construction 🏗️🚧
-
+## readMe under construction 🏗️🚧👷.
