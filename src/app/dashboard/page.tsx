@@ -5,9 +5,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faPhone, faEnvelope, faUser, faStar, faUserShield, faBook, faGraduationCap, faMedal, faCertificate } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faPhone, faEnvelope, faStar, faUserShield, faBook, faGraduationCap, faMedal, faCertificate } from '@fortawesome/free-solid-svg-icons';
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
   const userInfo = {
     name: 'John Doe',
     timezone: 'GMT+1',

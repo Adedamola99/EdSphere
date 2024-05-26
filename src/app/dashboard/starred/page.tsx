@@ -1,6 +1,6 @@
 import React from 'react'
 
-const StarredPage = () => {
+const StarredPage: React.FC = () => {
   return (
     <div>
       <h1>Starred Page</h1>

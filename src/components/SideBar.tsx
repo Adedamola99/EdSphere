@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faUsers, faBell, faFileAlt, faTachometerAlt, faStar, faCog, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
-const SideBar = () => {
+const SideBar: React.FC = () => {
     const isActive = usePathname();
 
     return ( 

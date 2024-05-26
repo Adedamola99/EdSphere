@@ -9,7 +9,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   return (
     <div className="flex h-screen">
       <Sidebar />
-      <div className="flex-grow p-2">{children}</div>
+      <div className="flex-grow">{children}</div>
     </div>
   );
 };
