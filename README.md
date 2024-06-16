@@ -50,5 +50,5 @@ We are committed to continuously improving EdSphere. Future updates will include
 
 Feel free to provide your feedback or contribute to the development of EdSphere.
 
------------
+---------
 
