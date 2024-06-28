@@ -47,8 +47,3 @@ Follow the simple installation steps outlined below to get started.
 ## Future Development
 
 We are committed to continuously improving EdSphere. Future updates will include additional features, enhanced performance, and user feedback implementations.
-
-Feel free to provide your feedback or contribute to the development of EdSphere.
-
----------
-
