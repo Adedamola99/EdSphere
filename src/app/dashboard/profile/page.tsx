@@ -1,133 +1,149 @@
 'use client'
-import React, { useState } from 'react';
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faUpload } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faMapMarkerAlt, faMedal  } from '@fortawesome/free-solid-svg-icons';
 
-const UserProfilePage: React.FC = () => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [profileData, setProfileData] = useState({
-    name: 'Damia',
-    location: 'Nigeria',
-    email: 'damia@example.com',
-    education: 'Bachelor of Science in Computer Science',
-    university: 'Example University',
-    graduationYear: '2023',
-    profilePicture: '/profile-pic.jpg',
-  });
-
-  const linkStyle = {
-    borderBottom: '3px solid #2D97B9',
-  }
-
-  const handleEditProfile = () => {
-    setIsEditing(!isEditing);
+const Profile: React.FC = () => {
+  const userInfo = {
+    name: 'John Doe',
+    timezone: 'GMT+1',
+    phone: '+1234567890',
+    email: 'john.doe@example.com',
+    rank: 'Gold',
+    subscriptionPlan: 'Premium',
+    location: 'New York, USA',
+    about: 'I am a frontend developer who loves collaborating with teams and mentoring new developers.',
+    interests: 'Web Development, Machine Learning, Music'
   };
 
-  const handleProfilePictureUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfileData({ ...profileData, profilePicture: reader.result as string });
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  const badges = [
+    { id: 1, icon: faMedal, color: 'green', title: 'Team Leader' },
+    { id: 2, icon: faMedal, color: 'blue', title: 'Mentor of the Month' },
+    { id: 3, icon: faMedal, color: 'yellow', title: 'Top Performer' },
+  ];
+
+  const [teammates, setTeammates] = useState([
+    { id: 1, name: 'Alice Smith', role: 'Developer', img: '/images/Capture 2.PNG' },
+    { id: 2, name: 'Bob Johnson', role: 'Designer', img: '/images/Capture 4.PNG' },
+    { id: 3, name: 'Charlie Brown', role: 'Project Manager', img: '/images/Capture 5.PNG' },
+    { id: 4, name: 'Diana Clark', role: 'Engineer', img: '/images/Capture 6.PNG' },
+    { id: 5, name: 'Ella Garcia', role: 'Data Analyst', img: '/images/Capture 7.PNG' },
+    { id: 6, name: 'Franklin Lee', role: 'Marketing Manager', img: '/images/Capture 8.PNG' },
+  ]);
+
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const teammatesPerPage = 2;
+  const indexOfLastTeammate = currentPage * teammatesPerPage;
+  const indexOfFirstTeammate = indexOfLastTeammate - teammatesPerPage;
+  const currentTeammates = teammates.slice(indexOfFirstTeammate, indexOfLastTeammate);
+
+  const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
+
+  useEffect(() => {
+    // Perform any side effects here
+  }, []);
 
   return (
-    <div>
-      <div className="bg-white px-4 pt-4">
-        <div className="flex align-middle justify-between">
-          <h1 className='font-aeonik text-xl text-purple-900'>Welcome Back Damia!</h1>
+    <div className="container mx-auto px-4 py-6">
+      <Head>
+        <title>Profile</title>
+      </Head>
+      
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold">Profile</h1>
+        <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+          Create Team
+        </button>
+      </div>
 
-          <div className="flex items-center gap-4">
-            <h4 className="font-aeonik text-center text-sm text-gray-700">7:00am</h4>
-
-            <div className="flex align-middle gap-2">
-              <img src={profileData.profilePicture} alt="profile-img" className='relative w-12 h-12 rounded-full overflow-hidden'/>
-
-              <div>
-                <h6 className="text-sm text-slate-800">John Doe</h6>
-                <h6 className="text-sm text-slate-800">johndoe123@gmail.com</h6>
-              </div>
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-lg">
+          <div className="flex items-start gap-4 mb-4">
+            <div className="relative w-16 h-16 rounded-full overflow-hidden">
+              <Image src="/images/Capture 1.PNG" alt="Profile Image" layout="fill" className="object-cover" />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold">{userInfo.name}</h2>
+              <p className="text-gray-600">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 text-gray-500" />
+                {userInfo.location}
+              </p>
             </div>
           </div>
-        </div>
 
-        <aside className="flex gap-3">
-          <Link
-            className="text-purple-900 text-lg"
-            href="message"
-            // style={ location.pathname === "/dashboard/talent/message" ? linkStyle : {} }
-            >
-              Course
-          </Link>
+          <div className="mb-4">
+            <h3 className="font-semibold text-lg">About</h3>
+            <p className="text-gray-700">{userInfo.about}</p>
+          </div>
 
-          <Link
-            className="text-purple-900 text-lg"
-            href="interview"
-            // style={ location.pathname === "/dashboard/talent/interview" ? linkStyle : {} }
-            >
-              
-          </Link>
-
-          <Link
-            className="text-purple-900 text-lg"
-            href="interview"
-            // style={ location.pathname === "/dashboard/talent/interview" ? linkStyle : {} }
-            >
-              Leaderboard
-          </Link>
-        </aside>
-      </div>
-
-      <div className="flex flex-col md:flex-row items-center gap-4 p-2">
-        <div className="relative w-32 h-32 md:w-48 md:h-48 md:mr-4 flex-shrink-0">
-          <img
-            className="w-full h-full object-cover rounded-lg"
-            src={profileData.profilePicture}
-            alt="Profile Picture"
-          />
-          <label
-            htmlFor="profilePicture"
-            className="absolute bottom-0 right-0 bg-blue-500 text-white rounded-full p-2 cursor-pointer shadow-md hover:bg-blue-600"
-          >
-            <FontAwesomeIcon icon={faUpload} className="text-gray-500" />
-            <input
-              id="profilePicture"
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={handleProfilePictureUpload}
-            />
-          </label>
-        </div>
-        <div className="p-4 border border-gray-300 rounded-lg flex-1">
           <div>
-            <h2 className="text-xl font-bold mb-2">Personal Information</h2>
-            <p>Name: {profileData.name}</p>
-            <p>Location: {profileData.location}</p>
-            <p>Email: {profileData.email}</p>
-          </div>
-          <div className="mt-4">
-            <h2 className="text-xl font-bold mb-2">Education</h2>
-            <p>Degree: {profileData.education}</p>
-            <p>University: {profileData.university}</p>
-            <p>Year of Graduation: {profileData.graduationYear}</p>
+            <h3 className="font-semibold text-lg">Interests</h3>
+            <p className="text-gray-700">{userInfo.interests}</p>
           </div>
         </div>
-      </div>
-      <div className="mt-4 flex justify-end">
-        <button
-          onClick={handleEditProfile}
-          className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2"
-        >
-          {isEditing ? 'Save' : 'Edit Profile'}
-        </button>
+
+
+        <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-lg">
+          <h3 className="text-lg font-semibold mb-4">Favourite Mates</h3>
+          <ul className="grid grid-cols-1 gap-4">
+            {currentTeammates.map(teammate => (
+              <li key={teammate.id} className="flex items-center space-x-4">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                  <Image src={teammate.img} alt={teammate.name} layout="fill" className="object-cover" />
+                </div>
+                <div>
+                  <p className="font-medium">{teammate.name}</p>
+                  <p className="text-sm text-gray-500">{teammate.role}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-4 flex justify-center">
+            <button
+              onClick={() => paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="mr-2 bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md"
+            >
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <button
+              onClick={() => paginate(currentPage + 1)}
+              disabled={indexOfLastTeammate >= teammates.length}
+              className="bg-gray-200 hover:bg-gray-300 py-2 px-4 rounded-md"
+            >
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+          </div>
+        </div>
+
+        <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-lg">
+          <h3 className="text-lg font-semibold mb-4">Achievements</h3>
+          <ul className="grid grid-cols-1 gap-4">
+            {badges.map(badge => (
+              <li key={badge.id} className="flex items-center">
+                <FontAwesomeIcon icon={badge.icon} className={`text-${badge.color}-500 text-xl`} />
+                <p className="ml-3 text-gray-700">{badge.title}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="lg:col-span-2 bg-white p-6 rounded-lg shadow-lg">
+          <h3 className="text-lg font-semibold mb-4">Current Team Info</h3>
+          <p className="text-gray-600">You are part of The Dev Masters team, working on a frontend project. As a mentor, you are guiding two junior developers in mastering React.js and CSS frameworks.</p>
+          <ul className="list-disc list-inside mt-4">
+            <li>Project Name: DevHub</li>
+            <li>Mentor: John Doe</li>
+            <li>Team Members: 5</li>
+            <li>Next Milestone: Complete landing page design</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
 };
 
-export default UserProfilePage;
+export default Profile;
